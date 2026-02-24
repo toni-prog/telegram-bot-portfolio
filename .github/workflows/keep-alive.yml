@@ -1,0 +1,30 @@
+name: Keep Render Alive
+
+on:
+  schedule:
+    # Каждые 5 минут (минимальный интервал для GitHub Actions)
+    - cron: "*/5 * * * *"
+
+  # Возможность ручного запуска (для тестирования)
+  workflow_dispatch:
+
+jobs:
+  ping_render:
+    name: Ping Render to keep awake
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Send GET request to Render
+        run: |
+          echo "⏰ Пинг в $(date '+%Y-%m-%d %H:%M:%S UTC')"
+          echo "🌐 URL: https://telegram-bot-portfolio-spaf.onrender.com"
+
+          # Отправляем запрос и проверяем ответ
+          response=$(curl -s -o /dev/null -w "%{http_code}" https://telegram-bot-portfolio-spaf.onrender.com)
+
+          if [ $response -eq 200 ]; then
+            echo "✅ Пинг успешен! Статус: $response"
+          else
+            echo "❌ Ошибка пинга! Статус: $response"
+            exit 1
+          fi
