@@ -8,8 +8,8 @@ from keyboards import admin_keyboard, admin_action_keyboard, main_keyboard
 from database import get_all_users, get_user_stats, set_user_role, get_user_role
 from decorators import admin_only, moderator_plus
 
-# ID главного админа (ваш Telegram ID)
-MAIN_ADMIN_ID = 679790991  # ЗАМЕНИТЕ НА СВОЙ ID
+# ID главного админа 
+MAIN_ADMIN_ID = 679790991  
 
 def is_main_admin(user_id):
     """Проверка, является ли пользователь главным админом"""

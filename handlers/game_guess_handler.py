@@ -95,8 +95,6 @@ def handle_guess_game(message):
         del user_game_data[user_id]
         
         # ВОЗВРАТ В ПРОЕКТЫ через изменение состояния
-        # Важно: мы не отправляем сообщение здесь, так как пользователь уже увидел результат
-        # Но нужно вернуть состояние в PROJECTS для следующего действия
         user_states[user_id]['current'] = State.PROJECTS
         user_states[user_id]['previous'] = State.GREET
         

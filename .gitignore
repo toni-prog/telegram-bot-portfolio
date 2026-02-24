@@ -6,6 +6,9 @@ config.py
 settings.py
 secrets.py
 credentials.py
+.env
+config.py
+!*.env.example
 
 # Виртуальное окружение
 venv/
@@ -16,7 +19,15 @@ ENV/
 # Файлы конфигурации IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # Кэш Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+
+# Логи
+*.log
