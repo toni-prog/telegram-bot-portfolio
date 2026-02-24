@@ -1,0 +1,22 @@
+# Файлы с токенами и паролями
+config.py
+*.env
+.env.*
+!*.env.example
+settings.py
+secrets.py
+credentials.py
+
+# Виртуальное окружение
+venv/
+.venv/
+env/
+ENV/
+
+# Файлы конфигурации IDE
+.vscode/
+.idea/
+
+# Кэш Python
+__pycache__/
+*.pyc
