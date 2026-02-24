@@ -36,5 +36,3 @@ jobs:
         run: |
           echo "⚠️ ВНИМАНИЕ: Render бот не отвечает!"
           echo "Проверьте: https://dashboard.render.com"
-
-          # Здесь можно добавить отправку в Telegram или email
