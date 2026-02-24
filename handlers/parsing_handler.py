@@ -1,6 +1,7 @@
 import requests
 import random
 import xml.etree.ElementTree as ET
+import os 
 from datetime import datetime
 from bot_instance import bot
 from user_data import user_states, user_lang
@@ -8,7 +9,8 @@ from states import State
 from utils import get_text
 from keyboards import parsing_keyboard, parsing_action_keyboard, projects_keyboard
 from database import save_currency_rates, save_quote_query, save_joke_query, log_action
-from config import OPENWEATHER_API_KEY
+
+ADMIN_ID = os.environ.get('ADMIN_ID', '123456789')
 
 def handle_parsing(message):
     """Обработчик для раздела парсинга"""

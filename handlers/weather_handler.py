@@ -1,5 +1,4 @@
-# handlers/weather_handler.py
-
+import os
 import requests
 from bot_instance import bot
 from user_data import user_states, user_lang
@@ -7,7 +6,9 @@ from states import State
 from utils import get_text
 from keyboards import weather_keyboard, projects_keyboard
 from database import save_weather_query, get_user_weather_history, log_action
-from config import OPENWEATHER_API_KEY
+
+ADMIN_ID = os.environ.get('ADMIN_ID', '123456789')
+OPENWEATHER_API_KEY = os.environ.get('OPENWEATHER_API_KEY')
 
 def handle_weather(message):
     """Обработчик для погоды"""
